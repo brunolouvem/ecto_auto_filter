@@ -57,6 +57,11 @@ jobs:
           MIX_ENV: test
         run: mix ecto.migrate -r EctoAutoFilter.Test.Repo
 
+      - name: Run seeds for tests
+        env:
+          MIX_ENV: test
+        run: mix run test/support/seeds.exs
+
       - name: Run Tests
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:${{ job.services.postgres.ports[5432] }}/ecto_auto_filter
