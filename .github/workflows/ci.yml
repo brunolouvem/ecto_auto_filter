@@ -51,16 +51,14 @@ jobs:
           MIX_ENV: test
         run: mix compile --warnings-as-errors
 
-      - name: Run mix ecto.migrate
+      - name: Run mix ecto.create ecto.migrate and seeds
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:${{ job.services.postgres.ports[5432] }}/ecto_auto_filter
           MIX_ENV: test
-        run: mix ecto.migrate -r EctoAutoFilter.Test.Repo
-
-      - name: Run seeds for tests
-        env:
-          MIX_ENV: test
-        run: mix run test/support/seeds.exs
+        run: |
+          mix ecto.create -r EctoAutoFilter.Test.Repo
+          mix ecto.migrate -r EctoAutoFilter.Test.Repo
+          mix run test/support/seeds.exs
 
       - name: Run Tests
         env:
