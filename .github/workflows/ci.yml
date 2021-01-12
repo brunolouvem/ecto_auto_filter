@@ -19,7 +19,7 @@ jobs:
       postgres:
         image: postgres:${{ matrix.postgres }}
         env:
-          POSTGRES_DB: exto_auto_filter
+          POSTGRES_DB: ecto_auto_filter
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
         options: >-
