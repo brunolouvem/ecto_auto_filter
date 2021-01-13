@@ -243,7 +243,7 @@ iex> UserRepository.filter(%{name: {"%to%", "ilike"}})
 
 
 ## Custom Filters
-EctoAutoFilter can be extended through its macro `add_filter/4`, see more in [`add_filter/4`](/EctoAutoFilter.html#add_filter/4)
+EctoAutoFilter can be extended through its macro `add_filter/4`, see more in [`add_filter/4`](https://hexdocs.pm/ecto_auto_filter/EctoAutoFilter.html#add_filter/4)
 
 
 ## Contributing
