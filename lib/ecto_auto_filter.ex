@@ -6,7 +6,7 @@ defmodule EctoAutoFilter do
   EctoAutoFilter is a helper for projects that use Ecto Schemas and segregate the queries in entity repository modules.
   EctoAutoFilter inject the `filter/3` function that by default has a pattern matching for each field of declared entity.
   """
-  @all_binaries_coparable_types ~w(id date integer datetime)a
+  @all_binaries_coparable_types ~w(id date integer datetime naive_datetime)a
 
   @doc """
   Injeta a função `filter/3` e as funções privadas responsáveis pelo filtro customizado a partir do `schema` base passado
